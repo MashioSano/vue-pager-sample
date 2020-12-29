@@ -68,6 +68,11 @@ export default {
   methods: {
     paginateClickCallback: function (pageNum) {
       this.currentPage = Number(pageNum);
+      if (this.currentPage==1){
+        this.$router.push('/reports')
+      }else{
+        this.$router.push(`reports?page=${this.currentPage}`)
+      }
     },
   },
 };
